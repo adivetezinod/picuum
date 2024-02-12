@@ -5,8 +5,8 @@
 #include <picuum/MovementController.hpp>
 
 namespace picuum {
-    picuum::CommandController commandController;
-    picuum::MovementController movementController;
+    extern picuum::CommandController commandController;
+    extern picuum::MovementController movementController;
 }
 
 #endif //PICUUM_H

@@ -6,9 +6,8 @@ static const int R_B = 11;
 static const int L_A = 13;
 static const int L_B = 12;
 
-#define MAX_BITS 16
+#define MAX_BITS 8
 #define MAX_SPEED ((1 << MAX_BITS) - 1)
-#define BY_MAX_SPEED(by) (int)(by * MAX_SPEED)
 
 namespace picuum
 {
@@ -22,16 +21,16 @@ namespace picuum
         pinMode(L_B, OUTPUT);
     }
 
-    void MovementController::forward(float multiplier)
+    void MovementController::forward()
     {
-        analogWrite(R_A, BY_MAX_SPEED(multiplier));
-        analogWrite(L_A, BY_MAX_SPEED(multiplier));
+        analogWrite(R_A, MAX_SPEED);
+        analogWrite(L_A, MAX_SPEED);
     }
 
-    void MovementController::backward(float multiplier)
+    void MovementController::backward()
     {
-        analogWrite(R_B, BY_MAX_SPEED(multiplier));
-        analogWrite(L_B, BY_MAX_SPEED(multiplier));
+        analogWrite(R_B, MAX_SPEED);
+        analogWrite(L_B, MAX_SPEED);
     }
 
     void MovementController::stop()
@@ -45,13 +44,13 @@ namespace picuum
 
     void MovementController::right()
     {
-        analogWrite(L_A, BY_MAX_SPEED(1));
-        analogWrite(R_B, BY_MAX_SPEED(1));
+        analogWrite(L_A, MAX_SPEED);
+        analogWrite(R_B, MAX_SPEED);
     }
 
     void MovementController::left()
     {
-        analogWrite(R_A, BY_MAX_SPEED(1));
-        analogWrite(L_B, BY_MAX_SPEED(1));
+        analogWrite(R_A, MAX_SPEED);
+        analogWrite(L_B, MAX_SPEED);
     }
 }

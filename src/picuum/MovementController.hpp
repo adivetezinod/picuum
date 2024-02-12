@@ -7,12 +7,12 @@ namespace picuum
     {
     public:
         void setup();
-        void forward(float);
-        void backward(float);
+        void forward();
+        void backward();
         void stop();
         void right();
         void left();
     };
 }
 
-#endif //MOVEMENT_CONTROLLER_H
+#endif // MOVEMENT_CONTROLLER_H

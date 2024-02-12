@@ -1,10 +1,15 @@
 #include <Arduino.h>
 #include <picuum/Picuum.hpp>
 
+namespace picuum
+{
+  picuum::CommandController commandController;
+  picuum::MovementController movementController;
+}
+
 void setup()
 {
   Serial.begin(115200);
-  Serial.println("Hello World");
 
   picuum::movementController.setup();
   picuum::commandController.setup();
